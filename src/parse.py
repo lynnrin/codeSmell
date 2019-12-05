@@ -7,11 +7,11 @@ from src import get
 class parse:
     target = ''
 
-    def __init__(self, target):
+    def __init__(self, target: str):
         self.target = target
 
     @staticmethod
-    def change_dict_key(d, old_key, new_key, default_value=None):
+    def change_dict_key(d: str, old_key: str, new_key: str, default_value=None):
         d[new_key] = d.pop(old_key, default_value)
 
     # globで全てのxmlファイルを取得

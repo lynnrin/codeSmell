@@ -1,6 +1,7 @@
 from git import *
 import subprocess
 from src import file_operation, get
+import json
 
 
 # 環境によってlabかmyか変更必須
@@ -20,6 +21,7 @@ class calc_metrics:
         get_target_param = get(self.target)
         target_file_path = get_target_param('path')
         tags = get_target_param('tags')
+        tags = json.loads(tags)
 
         jar_cmd = ["java", "-jar", home + "jxmetrics/org.jtool.jxmetrics/build/libs/jxmetrics-1.0-all.jar", "-target",
                    home + target_file_path + "/", "-name", "metric"]

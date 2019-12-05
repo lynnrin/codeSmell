@@ -6,7 +6,7 @@ class send_line:
         pass
 
     @staticmethod
-    def send_line(message):
+    def send_line(message: str):
         line_token = 'nU7wXOhxtTSvpZI0HENbOJEIPAGXh4rp1oJufBt98GQ'
         endpoint = 'https://notify-api.line.me/api/notify'
         message = "\n{}".format(message)
