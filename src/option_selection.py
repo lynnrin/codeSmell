@@ -15,11 +15,15 @@ class option_selection:
             if self.args[1] == '-met':
                 pm_obj = play_met(self.args[2])
                 pm_obj.play()
+
             elif self.args[1] == '-px':
                 pass
+
             elif self.args[1] == '-pt':
                 pass
+
             elif self.args[1] == '-add':
                 pass
+
             elif self.args[1] == '-cr':
                 pass

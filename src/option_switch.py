@@ -11,10 +11,6 @@ class Abstract_option(metaclass=ABCMeta):
     def play(self):
         raise NotImplementedError()
 
-    @abstractmethod
-    def print_result(self):
-        raise NotImplementedError()
-
 
 class print_help(Abstract_option, ABC):
     def play(self):
@@ -27,9 +23,6 @@ class print_help(Abstract_option, ABC):
         print("-cr [target csv directory full path] [target validation directory] :"
               " correspond metrics and validation file")
 
-    def print_result(self):
-        pass
-
 
 class play_met(Abstract_option, ABC):
     target = ''
@@ -41,9 +34,6 @@ class play_met(Abstract_option, ABC):
         cm_obj = calc_metrics(self.target)
         cm_obj.play_jxmetrics()
 
-    def print_result(self):
-        pass
-
 
 class play_px(Abstract_option, ABC):
     target = ''
@@ -52,9 +42,6 @@ class play_px(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
-
-    def print_result(self):
         pass
 
 
@@ -67,9 +54,6 @@ class play_pt(Abstract_option, ABC):
     def play(self):
         pass
 
-    def print_result(self):
-        pass
-
 
 class play_add(Abstract_option, ABC):
     target = ''
@@ -78,9 +62,6 @@ class play_add(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
-
-    def print_result(self):
         pass
 
 
@@ -93,5 +74,3 @@ class play_cr(Abstract_option, ABC):
     def play(self):
         pass
 
-    def print_result(self):
-        pass
