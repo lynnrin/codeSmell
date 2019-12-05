@@ -1,5 +1,6 @@
 from abc import *
 from abc import ABC
+from src import calc_metrics
 
 
 class Abstract_option(metaclass=ABCMeta):
@@ -31,19 +32,24 @@ class print_help(Abstract_option, ABC):
 
 
 class play_met(Abstract_option, ABC):
-    def __init__(self):
-        pass
+    target = ''
+
+    def __init__(self, target):
+        self.target = target
 
     def play(self):
-        pass
+        cm_obj = calc_metrics(self.target)
+        cm_obj.play_jxmetrics()
 
     def print_result(self):
         pass
 
 
 class play_px(Abstract_option, ABC):
-    def __init__(self):
-        pass
+    target = ''
+
+    def __init__(self, target):
+        self.target = target
 
     def play(self):
         pass
@@ -53,8 +59,10 @@ class play_px(Abstract_option, ABC):
 
 
 class play_pt(Abstract_option, ABC):
-    def __init__(self):
-        pass
+    target = ''
+
+    def __init__(self, target):
+        self.target = target
 
     def play(self):
         pass
@@ -64,8 +72,10 @@ class play_pt(Abstract_option, ABC):
 
 
 class play_add(Abstract_option, ABC):
-    def __init__(self):
-        pass
+    target = ''
+
+    def __init__(self, target):
+        self.target = target
 
     def play(self):
         pass
@@ -75,8 +85,10 @@ class play_add(Abstract_option, ABC):
 
 
 class play_cr(Abstract_option, ABC):
-    def __init__(self):
-        pass
+    target = ''
+
+    def __init__(self, target):
+        self.target = target
 
     def play(self):
         pass
