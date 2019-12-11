@@ -24,7 +24,8 @@ class option_selection:
                 pass
 
             elif self.args[1] == '-add':
-                pass
+                tailor_csv = play_add(self.args[2])
+                tailor_csv.play()
 
             elif self.args[1] == '-cr':
                 pass

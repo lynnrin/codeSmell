@@ -48,7 +48,6 @@ class play_px(Abstract_option, ABC):
         param_operate = get.get(self.target)
         # home切り替え
         xml_path = get.get('basic').get_parameter('my_home') + param_operate.get_parameter('path_xml')
-        print(xml_path)
         all_file = parse_x.pick_up_all_file(xml_path, 'xml')
         for file_name in all_file:
             parse_x.parse_XML(os.path.splitext(file_name)[0].split('/')[-1])
@@ -71,7 +70,7 @@ class play_add(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
+        tailor.tailor(self.target).tailor_validation_data()
 
 
 class play_cr(Abstract_option, ABC):
