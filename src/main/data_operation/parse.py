@@ -15,10 +15,9 @@ class parse:
         d[new_key] = d.pop(old_key, default_value)
 
     # globで全てのxmlファイルを取得
-    def pick_up_all_file(self, path_id, extension):
-        getParam = get(self.target)
+    @staticmethod
+    def pick_up_all_file(target_directory, extension):
         try:
-            target_directory = getParam.get_parameter(path_id)
             f_n = glob.glob(target_directory + '*.' + extension)
             return f_n
 
@@ -31,9 +30,10 @@ class parse:
         #     self.parse_XML(os.path.splitext(f)[0].split('/')[-1])
 
     def parse_XML(self, input_file_name):
-        getParam = get(self.target)
-        xml_path = getParam.get_parameter('path_xml')
-        save_csv_path = getParam.get_parameter('path_csv')
+        get_param_operate = get.get(self.target)
+        home = get.get('basic').get_parameter('my_home')
+        xml_path = home + get_param_operate.get_parameter('path_xml')
+        save_csv_path = home + get_param_operate.get_parameter('save_csv')
         tree = ET.parse(xml_path + input_file_name + '.xml')
         root = tree.getroot()
         # df_parse = pd.DataFrame()

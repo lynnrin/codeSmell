@@ -13,11 +13,12 @@ class option_selection:
 
         elif len(self.args) == 3:
             if self.args[1] == '-met':
-                pm_obj = play_met(self.args[2])
-                pm_obj.play()
+                pm_ins = play_met(self.args[2])
+                pm_ins.play()
 
             elif self.args[1] == '-px':
-                pass
+                px_ins = play_px(self.args[2])
+                px_ins.play()
 
             elif self.args[1] == '-pt':
                 pass

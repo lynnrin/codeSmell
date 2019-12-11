@@ -1,6 +1,8 @@
 from abc import *
 from abc import ABC
 from src.main.data_operation import *
+from src.main.operation import get
+import os
 
 
 class Abstract_option(metaclass=ABCMeta):
@@ -31,8 +33,8 @@ class play_met(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        cm_obj = calc_metrics(self.target)
-        cm_obj.play_jxmetrics()
+        cm_obj = calc_metrics.calc_metrics(self.target)
+        cm_obj.play_jxMetrics()
 
 
 class play_px(Abstract_option, ABC):
@@ -42,7 +44,14 @@ class play_px(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
+        parse_x = parse.parse(self.target)
+        param_operate = get.get(self.target)
+        # home切り替え
+        xml_path = get.get('basic').get_parameter('my_home') + param_operate.get_parameter('path_xml')
+        print(xml_path)
+        all_file = parse_x.pick_up_all_file(xml_path, 'xml')
+        for file_name in all_file:
+            parse_x.parse_XML(os.path.splitext(file_name)[0].split('/')[-1])
 
 
 class play_pt(Abstract_option, ABC):

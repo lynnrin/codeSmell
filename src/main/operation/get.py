@@ -10,6 +10,6 @@ class get:
     # parameter.iniからData取得
     def get_parameter(self, param):
         config_data = configparser.ConfigParser()
-        config_data.read('parameter.ini')
+        config_data.read('src/main/parameter.ini')
         target = config_data.get(self.target, param)
         return target
