@@ -88,6 +88,8 @@ class parse:
         df_validate_split = pd.concat([df_validate, df_validate[2].str.split(' ', expand=True)], axis=1)
         df_validate_split.columns = ['method', 'file', 'delete', 'delete', 'path', 'LoC']
         df_validate_split2 = df_validate_split.drop('delete', axis=1)
+        df_validate_split2['path'] = df_validate_split2['path'].str.replace('.', '/')
+        df_validate_split2['file'] = df_validate_split2['file'].str.strip()
 
         # csvで保存 parameterいじってから diretoryの作成 pathも
         save_csv_path = get.get('basic').get_parameter('my_home') + get_param.get_parameter('save_data_path') + \

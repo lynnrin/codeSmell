@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f28b5f5-8988-4692-91cc-f8f9d1bb2167" name="Default Changelist" comment="os.makedirs(new_dir_path_recursive, exist_ok=True)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/test/ant" beforeDir="false" afterPath="$PROJECT_DIR$/projects/test/ant" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/test/ant/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/test/ant/README" beforeDir="false" />
@@ -117,12 +118,8 @@
       <change beforePath="$PROJECT_DIR$/projects/test/ant/src/testcases/org/apache/tools/ant/PathTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/test/ant/whiteboard/utah/design guide.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/test/ant/whiteboard/utah/docbookx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/data_operation/calc_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data_operation/calc_metrics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/data_operation/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data_operation/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/operation/file_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/operation/file_operation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/option/option_selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/option/option_selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/option/option_switch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/option/option_switch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/parameter.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/parameter.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data_operation/tailor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data_operation/tailor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/option/option_switch.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="417">
-              <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+              <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -201,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/data_operation/parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="505">
+              <caret line="98" column="82" selection-start-line="98" selection-start-column="82" selection-end-line="98" selection-end-column="82" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -210,11 +207,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/data_operation/tailor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+            <state relative-caret-position="505">
+              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -274,15 +271,15 @@
         <option value="$PROJECT_DIR$/src/main/main.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/src/main/operation/get.py" />
-        <option value="$PROJECT_DIR$/src/main/data_operation/tailor.py" />
         <option value="$PROJECT_DIR$/src/.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/option/option_selection.py" />
         <option value="$PROJECT_DIR$/src/main/data_operation/calc_metrics.py" />
         <option value="$PROJECT_DIR$/src/main/parameter.ini" />
         <option value="$PROJECT_DIR$/src/main/operation/file_operation.py" />
-        <option value="$PROJECT_DIR$/src/main/data_operation/parse.py" />
         <option value="$PROJECT_DIR$/src/main/option/option_switch.py" />
+        <option value="$PROJECT_DIR$/src/main/data_operation/parse.py" />
+        <option value="$PROJECT_DIR$/src/main/data_operation/tailor.py" />
       </list>
     </option>
   </component>
@@ -360,12 +357,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574842828823</updated>
       <workItem from="1574842832111" duration="754000" />
-      <workItem from="1574843675018" duration="35354000" />
+      <workItem from="1574843675018" duration="37280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36108000" />
+    <option name="totallyTimeSpent" value="38034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -491,16 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/data_operation/tailor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/data_operation/calc_metrics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -528,16 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/data_operation/parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/option/option_selection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -548,9 +525,29 @@
     <entry file="file://$PROJECT_DIR$/src/main/option/option_switch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
-          <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/data_operation/parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="98" column="82" selection-start-line="98" selection-start-column="82" selection-end-line="98" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/data_operation/tailor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
