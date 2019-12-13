@@ -1,7 +1,7 @@
 from git import *
 import subprocess
 from src.main.operation import *
-import json
+# import json
 
 
 # 環境によってlabかmyか変更必須

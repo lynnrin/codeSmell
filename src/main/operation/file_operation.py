@@ -25,7 +25,7 @@ class file_operation:
 
     # Metricsファイルを移動(mvコマンド)する目的
     def rename_file(self, target_tag: str, target_file_path: str) -> bool:
-        # try:
+        try:
             target_param_instanse = get.get(self.target)
             save_xml_path = target_param_instanse.get_parameter('path_xml')
             file_name_before = target_param_instanse.get_parameter('before')
@@ -36,10 +36,15 @@ class file_operation:
             print(rename)
             subprocess.run(rename, shell=True)
             return True
-        # except:
-        #     return False
+        except:
+            return False
 
     # Metricsファイルを判別しやすくする目的(e.g. rel/...をapache_....に変更)
     @staticmethod
     def replace_file_name(original: str, before: str, after: str) -> str:
         return original.replace(before, after)
+
+    @staticmethod
+    def make_directory(directory_name: str) -> bool:
+        if not os.path.isdir(directory_name):
+            os.makedirs(directory_name, exist_ok=True)

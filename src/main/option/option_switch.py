@@ -60,7 +60,25 @@ class play_pt(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
+        parse_txt = parse.parse(self.target)
+        param_operate = get.get(self.target)
+        dataset_dir = get.get('basic').get_parameter('my_home') + param_operate.get_parameter('dataset')
+
+        # directory名のみ取得
+        directories = os.listdir(dataset_dir)
+        directories = [f for f in directories if os.path.isdir(os.path.join(dataset_dir, f))]
+
+        # 対象のSmell
+        target_smell = get.get('basic').get_parameter('smell_list')
+        target_smell = [x.strip() for x in target_smell.strip("[]").split(',')]
+
+        # file名取得
+        for dir in directories:
+            all_files = parse_txt.pick_up_all_file(os.path.join(dataset_dir, dir) + '/', 'txt')
+            for file in all_files:
+                for smell_name in target_smell:
+                    if smell_name in os.path.basename(file):
+                        parse_txt.parse_txt(file)
 
 
 class play_add(Abstract_option, ABC):

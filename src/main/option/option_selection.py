@@ -21,7 +21,8 @@ class option_selection:
                 px_ins.play()
 
             elif self.args[1] == '-pt':
-                pass
+                pt_ins = play_pt(self.args[2])
+                pt_ins.play()
 
             elif self.args[1] == '-add':
                 tailor_csv = play_add(self.args[2])

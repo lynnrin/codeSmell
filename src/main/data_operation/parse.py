@@ -1,7 +1,8 @@
 import xml.etree.ElementTree as ET
 import glob
 import pandas as pd
-from src.main.operation import get
+from src.main.operation import get, file_operation
+import os
 
 
 class parse:
@@ -29,7 +30,7 @@ class parse:
         # for f in f_n:
         #     self.parse_XML(os.path.splitext(f)[0].split('/')[-1])
 
-    def parse_XML(self, input_file_name):
+    def parse_XML(self, input_file_name: str):
         get_param_operate = get.get(self.target)
         home = get.get('basic').get_parameter('my_home')
         xml_path = home + get_param_operate.get_parameter('path_xml')
@@ -78,17 +79,19 @@ class parse:
         df_parse.to_csv(save_csv_path + input_file_name + '.csv', index=False, sep='@')
         del df_parse
 
-    def parse_txt(self, input_file_name):
+    def parse_txt(self, input_file_path: str):
         # datasetの読み込み
-        get_param = get(self.target)
-        dataset_path = get_param.get_parameter('dataset')
-        df_validate = pd.read_table(dataset_path + input_file_name + '.txt', sep=':', header=None)
+        get_param = get.get(self.target)
+        df_validate = pd.read_table(input_file_path, sep=':', header=None)
 
         # ':'で分割出来ない部分を無理やり分割　FIX-ME
         df_validate_split = pd.concat([df_validate, df_validate[2].str.split(' ', expand=True)], axis=1)
         df_validate_split.columns = ['method', 'file', 'delete', 'delete', 'path', 'LoC']
         df_validate_split2 = df_validate_split.drop('delete', axis=1)
 
-        # csvで保存 parameterいじってから
-        # df_validate_split2.to_csv()
-
+        # csvで保存 parameterいじってから diretoryの作成 pathも
+        save_csv_path = get.get('basic').get_parameter('my_home') + get_param.get_parameter('save_data_path') + \
+                        os.path.splitext(input_file_path)[0].split('/')[-2] + '/'
+        file_name = os.path.splitext(input_file_path)[0].split('/')[-1] + '.csv'
+        file_operation.file_operation.make_directory(save_csv_path)
+        df_validate_split2.to_csv(save_csv_path + file_name, sep='@', index=False)
