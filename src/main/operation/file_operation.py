@@ -31,7 +31,8 @@ class file_operation:
             file_name_before = target_param_instanse.get_parameter('before')
             f_n = glob.glob(self.home + target_file_path + "/metric*")
             file_name = self.home + save_xml_path + \
-                        self.replace_file_name(target_tag, file_name_before, self.target) + ".xml"
+                        self.replace_file_name(target_tag, file_name_before, self.target + '_') + ".xml"
+            self.make_directory(self.home + save_xml_path)
             rename = "mv " + f_n[0] + " " + file_name
             print(rename)
             subprocess.run(rename, shell=True)

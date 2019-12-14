@@ -8,7 +8,7 @@ class option_selection:
         self.args = args
 
     def selection(self):
-        if len(self.args) <= 2 or self.args[1] == '-h':
+        if len(self.args) != 3 or self.args[1] == '-h':
             print_help().play()
 
         elif len(self.args) == 3:
@@ -29,4 +29,5 @@ class option_selection:
                 tailor_csv.play()
 
             elif self.args[1] == '-cr':
-                pass
+                cor_csv = play_cr(self.args[2])
+                cor_csv.play()

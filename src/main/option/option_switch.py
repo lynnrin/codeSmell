@@ -2,7 +2,7 @@ from abc import *
 from abc import ABC
 from src.main.data_operation import *
 from src.main.operation import get
-import os
+import os, glob, pathlib
 
 
 class Abstract_option(metaclass=ABCMeta):
@@ -98,5 +98,16 @@ class play_cr(Abstract_option, ABC):
         self.target = target
 
     def play(self):
-        pass
+        home = get.get('basic').get_parameter('my_home')
+        get_parm_ins = get.get(self.target)
+        metrics_dir = pathlib.Path(home + get_parm_ins.get_parameter('change_csv'))
+        csv_list = glob.glob(home + get_parm_ins.get_parameter('save_data_path') + '**/*.csv')
+        metrics_dir_list = metrics_dir.glob('**/*.csv')
+        for file in csv_list:
+            if 'flag' in os.path.basename(file):
+                continue
+            for met_file in metrics_dir_list:
+                if not os.path.splitext(os.path.basename(met_file))[0] in file:
+                    continue
+                tailor.tailor(self.target).tailor_validation_data(file, met_file)
 
