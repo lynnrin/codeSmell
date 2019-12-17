@@ -34,6 +34,7 @@ class calc_metrics:
 
         # release毎にcloneして計算
         file_operate = file_operation.file_operation(home, self.target)
+        file_operate.make_directory(home + target_file_path)
         for i in tags:
             file_operate.remove_directory(home + target_file_path)
             Repo.clone_from('https://github.com/apache/ant', ##################

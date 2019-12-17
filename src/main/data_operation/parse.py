@@ -76,7 +76,7 @@ class parse:
         # 邪魔なデータを削除し，csv出力
         df_parse = df_parse.drop_duplicates()
         df_parse = df_parse.dropna(how='any', axis=1)
-        file_operation.file_operation().make_directory(save_csv_path)
+        file_operation.file_operation.make_directory(save_csv_path)
         df_parse.to_csv(save_csv_path + input_file_name + '.csv', index=False, sep='@')
         del df_parse
 

@@ -17,13 +17,11 @@ class Abstract_option(metaclass=ABCMeta):
 class print_help(Abstract_option, ABC):
     def play(self):
         print("-h : print help")
-        print("-met [target projects's full path] [save xml full path] : calculate source code metrics")
-        print("-px [target xml directory full path] [save csv full path] : parse xml to csv (metrics file)")
-        print("-pt [target validation text directory full path] [save csv full path] :"
-              " parse txt to csv (validation file)")
-        print("-add [target csv full path] [save csv full path] : add columns new metrics (metrics file)")
-        print("-cr [target csv directory full path] [target validation directory] :"
-              " correspond metrics and validation file")
+        print("-met [target name] : calculate source code metrics")
+        print("-px [target name] : parse xml to csv (metrics file)")
+        print("-pt [target name] : parse txt to csv (validation file)")
+        print("-add [target name] : add columns new metrics (metrics file)")
+        print("-cr [target name] : correspond metrics and validation file")
 
 
 class play_met(Abstract_option, ABC):
@@ -100,14 +98,16 @@ class play_cr(Abstract_option, ABC):
     def play(self):
         home = get.get('basic').get_parameter('my_home')
         get_parm_ins = get.get(self.target)
-        metrics_dir = pathlib.Path(home + get_parm_ins.get_parameter('change_csv'))
         csv_list = glob.glob(home + get_parm_ins.get_parameter('save_data_path') + '**/*.csv')
-        metrics_dir_list = metrics_dir.glob('**/*.csv')
+        metrics_dir_list = glob.glob(home + get_parm_ins.get_parameter('change_csv') + '*.csv')
+
         for file in csv_list:
+            # print(file)
             if 'flag' in os.path.basename(file):
                 continue
             for met_file in metrics_dir_list:
-                if not os.path.splitext(os.path.basename(met_file))[0] in file:
-                    continue
-                tailor.tailor(self.target).tailor_validation_data(file, met_file)
+                # print("{}    {}\n".format(met_file, file))
+                if os.path.splitext(os.path.basename(met_file))[0] in file:
+                    print("{}    {}\n".format(met_file, file))
+                    tailor.tailor(self.target).code_smell_flag(file, met_file)
 
